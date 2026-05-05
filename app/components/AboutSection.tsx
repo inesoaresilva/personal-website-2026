@@ -9,6 +9,9 @@ export default function AboutSection() {
       aria-labelledby="about-heading"
       className="bg-cream w-full px-6 py-24 md:px-16"
     >
+      {/* Visually hidden heading for screen readers */}
+      <h2 id="about-heading" className="sr-only">About</h2>
+
       <div className="mx-auto max-w-6xl">
         {/* Section label */}
         <p aria-hidden="true" className="mb-16 font-fraunces text-[11px] uppercase tracking-[0.25em] text-navy/20">
@@ -21,8 +24,8 @@ export default function AboutSection() {
             <Image
               src="/ines-aboutme.png"
               alt="Inês Silva"
-              width={300}
-              height={420}
+              width={400}
+              height={520}
               style={{ objectFit: "contain", objectPosition: "top center" }}
               priority
             />
@@ -30,28 +33,34 @@ export default function AboutSection() {
 
           {/* ── Right: text ── */}
           <div className="flex-1 lg:pt-2">
-            <h2 id="about-heading" className="mb-8 font-fraunces text-4xl font-bold leading-tight text-navy md:text-5xl">
-              Not your typical developer.
-            </h2>
-            <div className="space-y-5 font-jakarta text-base leading-relaxed text-navy/75">
+            <p className="mb-8 font-fraunces text-2xl font-light italic leading-snug text-navy md:text-3xl">
+              More than delivering software, I care about{" "}
+              <span className="font-bold text-[#5C7A6B]">what software does for people</span>.
+            </p>
+
+            <div className="space-y-4 font-jakarta text-[15px] leading-[1.75] text-[#2a3a4a]">
               <p>
-              I studied Computer Engineering, then did a master's in Biomedical Engineering.
-              My dissertation was on software applied to health systems. 
-              I choose this path because I was always more interested in what software does for people than in the software itself.
+                I&apos;m a frontend engineer who came to code through curiosity.
               </p>
               <p>
-                On my first week working at Sky, before I had context on a single
-                ticket, I scheduled one-on-ones with every teammate, found gaps in
-                the onboarding process, and wrote a doc to fix them. Nobody asked.
-                It just needed doing.
+                I have a bachelor&apos;s in Computer Engineering and a master&apos;s in
+                Biomedical Engineering — my dissertation was on software applied to
+                health systems. I chose that path because I wanted to understand how
+                systems connect to people, not just how they run.
               </p>
               <p>
-                I'm a 2020 covid graduated student which means working remotely is my first language. I've always worked in international teams across different timezones. 
-                Self-management and clear communication are skills I stand-by.
+                That instinct shows up in how I work. Wherever I&apos;ve joined a team,
+                I&apos;ve started by getting to know the people in it. Then I look for the
+                gaps nobody owns yet — unclear onboarding, missing documentation, the
+                questions that keep coming up in Slack — and do something about them.
+              </p>
+              <p className="mt-2 border-l-2 border-[#5C7A6B] pl-4 italic">
+                Nobody asks. It just needs doing.
               </p>
               <p>
-                I've built frontend across many different tech stacks — currently working mainly in React, Next.js, Svelte, and TypeScript. 
-                I also work closely with AI to move fast and iterate.
+                I&apos;ve spent the last 5+ years building interfaces at remote-first
+                companies — React, Next.js, Svelte, TypeScript. I use AI to move fast
+                and iterate. I&apos;ve stopped pretending otherwise.
               </p>
             </div>
 
