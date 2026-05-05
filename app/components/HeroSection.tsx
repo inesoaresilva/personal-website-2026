@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
@@ -54,16 +55,20 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* ── Right: bitmoji ── */}
+        {/* ── Right: Memoji ── */}
         <div className="flex shrink-0 justify-center lg:justify-end">
-          <Image
-            src="/bitemoji.png"
-            alt=""
-            width={380}
-            height={380}
-            style={{ objectFit: "contain" }}
-            priority
-          />
+          <motion.div
+            animate={{ y: [0, -10, -6, 0], x: [0, 8, -8, 0], rotate: [-1.5, 1.5, -1, -1.5] }}
+            transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+          >
+            <Image
+              src="/bitemoji.png"
+              alt="Inês"
+              width={280}
+              height={280}
+              priority
+            />
+          </motion.div>
         </div>
       </div>
 
