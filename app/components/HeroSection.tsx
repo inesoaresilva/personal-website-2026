@@ -8,7 +8,7 @@ export default function HeroSection() {
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="relative flex min-h-screen items-center bg-navy px-6 md:px-16"
+      className="relative z-10 flex min-h-screen items-center bg-navy px-6 md:px-16"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
         {/* ── Left: text ── */}
@@ -72,10 +72,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Wave bottom edge */}
+      {/* Wave bottom edge — navy dips into cream About section */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-0 top-full z-10 w-full"
+        className="pointer-events-none absolute left-0 top-full w-full"
       >
         <svg
           viewBox="0 0 1440 80"

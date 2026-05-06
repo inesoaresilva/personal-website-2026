@@ -76,7 +76,7 @@ export default function WorkSection() {
     <section
       id="experience"
       aria-labelledby="work-heading"
-      className="w-full bg-navy px-6 py-24 md:px-16"
+      className="relative w-full bg-navy px-6 py-24 md:px-16"
     >
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 font-jakarta text-[11px] uppercase tracking-widest text-[#F5EDD8]/50">
@@ -170,6 +170,24 @@ export default function WorkSection() {
             </article>
           ))}
         </div>
+      </div>
+
+      {/* Bottom wave — navy dips into cream Writing section */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-full z-10 w-full"
+      >
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-20 w-full"
+        >
+          <path
+            d="M0,50 C120,20 240,20 360,50 C480,80 600,80 720,50 C840,20 960,20 1080,50 C1200,80 1320,80 1440,50 L1440,0 L0,0 Z"
+            fill="#0d1b2a"
+          />
+        </svg>
       </div>
     </section>
   );
