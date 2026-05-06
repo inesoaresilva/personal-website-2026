@@ -75,7 +75,7 @@ export default function HeroSection() {
       {/* Wave bottom edge */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-0 top-full w-full"
+        className="pointer-events-none absolute left-0 top-full z-10 w-full"
       >
         <svg
           viewBox="0 0 1440 80"
