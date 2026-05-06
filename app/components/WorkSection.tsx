@@ -27,6 +27,7 @@ const mainmatterProjects = [
     stack: "Svelte · SvelteKit · 1.5 years",
     description:
       "One of the world's largest train booking platforms. I worked on the Svelte and SvelteKit frontend building across the booking funnel — passenger details screens, shopping cart, form components, backend API integration. Progressive enhancement was a constant consideration: the product needed to work on poor connections, so features were built to function without JavaScript first. I also led a proof of concept for Storyblok CMS integration. Large codebase, distributed team, full agile cycle from refinement to production.",
+    tags: ["Svelte", "SvelteKit"],
   },
   {
     name: "Gravity",
@@ -34,15 +35,16 @@ const mainmatterProjects = [
     stack: "Remix · Node.js",
     description:
       "Internal developer tool: a GitHub app that monitors frontend bundle size in pull requests. I worked across the full stack — frontend UI, GitHub CheckRun integrations, bundle size tracking in CI, and infrastructure additions including Sentry for error tracking and Percy for visual regression testing. I collaborated closely with the designer on UI decisions, particularly on the First Build experience. For a long stretch it was just me and one other engineer without much structure around us — I pushed for retrospectives and regular process check-ins to keep us aligned.",
+    tags: ["Remix", "Node.js"],
   },
   {
     name: "Experteer",
     url: "https://mainmatter.com/cases/experteer/",
     stack: "React · TypeScript",
     description:
-      "Signup flow for a recruitment marketplace with 6 million users. A high-stakes UX surface — getting it right directly affects whether people come back.",
+      "Signup flow for a recruitment marketplace with 6 million users. I worked on the CV parsing product — a React app that extracts data from uploaded CVs to build user profiles. I built components across the app, handled form validation, and worked on a location autocomplete with geocode integration. Tests written in Jest and React Testing Library throughout.",
+    tags: ["React", "TypeScript"],
   },
-  
 ];
 
 export default function WorkSection() {
@@ -87,7 +89,7 @@ export default function WorkSection() {
                 </p>
               </div>
 
-              <p className="max-w-2xl font-jakarta text-[15px] leading-[1.75] text-[rgba(245,237,216,0.65)]">
+              <p className="max-w-2xl font-jakarta text-[15px] leading-[1.75] text-[rgba(245,237,216,0.85)]">
                 {skyJob.description}
               </p>
 
@@ -109,25 +111,25 @@ export default function WorkSection() {
             aria-label="Frontend Engineer at Mainmatter"
             className="flex flex-col gap-6 sm:flex-row sm:gap-12"
           >
-            {/* Meta column */}
-            <div className="w-36 shrink-0 flex flex-col gap-1">
-              <p className="font-jakarta text-sm font-medium text-[#FBE290]">
-                2021 – 2025
-              </p>
-              <p className="font-jakarta text-[15px] font-semibold leading-snug text-[#F5EDD8]">
-                Mainmatter
-              </p>
-              <p className="font-jakarta text-xs text-[#F5EDD8]/50">
-                Software consultancy
-              </p>
-              <p className="font-jakarta text-xs text-[#F5EDD8]/50">
-                Frontend Engineer
-              </p>
-            </div>
+            <p className="w-28 shrink-0 font-jakarta text-sm font-medium text-[#FBE290]">
+              2021 – 2025
+            </p>
 
-            {/* Content */}
             <div className="flex flex-col gap-5">
-              <p className="max-w-2xl font-jakarta text-[15px] leading-[1.75] text-[rgba(245,237,216,0.65)]">
+              {/* Header — mirrors Sky's role/company structure */}
+              <div>
+                <p className="font-jakarta text-lg font-semibold text-[#F5EDD8]">
+                  Frontend Engineer
+                </p>
+                <p className="font-jakarta text-sm text-[rgba(245,237,216,0.5)]">
+                  Mainmatter
+                  <span className="ml-2 text-[12px] text-[rgba(245,237,216,0.45)]">
+                    Software consultancy
+                  </span>
+                </p>
+              </div>
+
+              <p className="max-w-2xl font-jakarta text-[15px] leading-[1.75] text-[rgba(245,237,216,0.85)]">
                 Four years working across three very different products — different
                 industries, different stacks, different scales.
               </p>
@@ -149,9 +151,19 @@ export default function WorkSection() {
                         {project.stack}
                       </span>
                     </div>
-                    <p className="mt-1 font-jakarta text-[14px] leading-[1.65] text-[#F5EDD8]/55">
+                    <p className="mt-1 font-jakarta text-[14px] leading-[1.65] text-[rgba(245,237,216,0.85)]">
                       {project.description}
                     </p>
+                    <ul className="mt-2 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-full border border-[#A8D8EA]/30 px-3 py-1 font-jakarta text-xs text-[#A8D8EA]"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
