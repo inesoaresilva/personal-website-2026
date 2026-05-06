@@ -107,12 +107,9 @@ export default function WorkSection() {
                   href={job.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-baseline gap-0.5 font-jakarta text-[15px] font-semibold leading-snug text-[#F5EDD8] no-underline transition-colors duration-200 ease-in-out hover:text-[#FBE290] hover:underline"
+                  className="inline-flex items-baseline gap-0.5 font-jakarta text-[15px] font-semibold leading-snug text-[#F5EDD8] no-underline transition-colors duration-200 ease-in-out hover:text-[#FBE290]"
                 >
-                  {job.company}
-                  <span className="opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                    ↗
-                  </span>
+                  {job.company} ↗
                 </a>
                 <p className="font-jakarta text-xs text-[rgba(245,237,216,0.5)]">
                   {job.role}
