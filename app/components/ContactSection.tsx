@@ -12,12 +12,14 @@ export default function ContactSection() {
       <div
         aria-hidden
         className="pointer-events-none absolute left-0 top-0 z-10 w-full"
+        style={{ marginTop: '-1px' }}
       >
         <svg
           viewBox="0 0 1440 80"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
           className="h-20 w-full"
+          style={{ display: 'block' }}
         >
           <path d={WAVE_PATH} fill="#4A6858" />
         </svg>

@@ -28,10 +28,10 @@ export default function Nav() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <a href="#hero" className="font-jakarta">
           <span style={{ display: 'inline-flex', alignItems: 'baseline', color: '#F5EDD8', fontSize: '16px', fontWeight: 500, letterSpacing: '0.01em' }}>
-            <SparkleI />nês soares silva
+            <SparkleI />nês<span className="hidden sm:inline"> soares</span> silva
           </span>
         </a>
-        <nav aria-label="Primary navigation" className="flex items-center gap-8">
+        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
           {navLinks.map(({ label, href }) => (
             <a
               key={href}
