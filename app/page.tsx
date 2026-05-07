@@ -4,6 +4,7 @@ import AboutSection from "./components/AboutSection";
 import WorkSection from "./components/WorkSection";
 import WritingSection from "./components/WritingSection";
 import StackSection from "./components/StackSection";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <WorkSection />
       <WritingSection />
       <StackSection />
+      <ContactSection />
     </main>
   );
 }
