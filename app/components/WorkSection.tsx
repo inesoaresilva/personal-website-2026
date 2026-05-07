@@ -31,6 +31,7 @@ const jobs = [
     company: "Mainmatter",
     url: "https://mainmatter.com/",
     role: "Frontend Engineer",
+    sublabel: null,
     description:
       "Four years working across three very different products — different industries, different stacks, different scales.",
     tags: null,
