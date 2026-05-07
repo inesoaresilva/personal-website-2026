@@ -102,8 +102,8 @@ export default function HeroSection() {
                 <Image
                   src="/bitemoji.png"
                   alt=""
-                  width={280}
-                  height={280}
+                  width={340}
+                  height={340}
                   priority
                 />
               </motion.div>

@@ -7,20 +7,22 @@ export default function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative bg-cream w-full px-6 py-24 md:px-16"
+      className="relative bg-cream w-full"
     >
-      {/* Visually hidden heading for screen readers */}
       <h2 id="about-heading" className="sr-only">About</h2>
 
       <div className="mx-auto max-w-6xl">
-        {/* Section label */}
-        <p aria-hidden="true" className="mb-16 font-fraunces text-[11px] uppercase tracking-[0.25em] text-navy/20">
+        <p
+          aria-hidden="true"
+          className="px-6 pt-24 pb-16 md:px-16 font-fraunces text-[11px] uppercase tracking-[0.25em] text-navy/20"
+        >
           About
         </p>
 
-        <div className="flex flex-col items-start gap-16 lg:flex-row lg:gap-0">
+        <div className="flex flex-col gap-16 lg:flex-row lg:gap-0">
+
           {/* ── Left: photo ── */}
-          <div className="mx-auto shrink-0 lg:mx-0 lg:pr-24">
+          <div className="mx-auto shrink-0 lg:mx-0 flex items-start justify-center lg:justify-start lg:pr-24">
             <Image
               src="/ines-aboutme.png"
               alt="Inês Silva"
@@ -32,7 +34,7 @@ export default function AboutSection() {
           </div>
 
           {/* ── Right: text ── */}
-          <div className="flex-1 lg:pt-2">
+          <div className="flex-1 px-6 pb-16 md:px-16 lg:pl-0 lg:pt-2 lg:pb-24">
             <p className="mb-8 font-fraunces text-2xl font-light italic leading-snug text-navy md:text-3xl">
               More than delivering software, I care about{" "}
               <span className="font-bold text-[#5C7A6B]">what software does for people</span>.
@@ -58,10 +60,10 @@ export default function AboutSection() {
                 Nobody asks. It just needs doing.
               </p>
               <p>
-                I&apos;ve spent the last 5+ years building interfaces at remote-first
-                companies — React, Next.js, Svelte, TypeScript. I use AI to move fast
-                and iterate. I&apos;ve stopped pretending otherwise.
+                I&apos;ve spent the last five years building interfaces at remote-first
+                companies — React, Next.js, Svelte, TypeScript. 
               </p>
+              <p>I use AI to move fast. The interesting work is still in the details it misses.</p>
             </div>
 
             <a

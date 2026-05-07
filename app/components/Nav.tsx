@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
+import SparkleI from "./SparkleI";
 
 const navLinks = [
-  { label: "ABOUT", href: "#about" },
-  { label: "EXPERIENCE", href: "#experience" },
-  { label: "WRITING", href: "#writing" },
-  { label: "STACK", href: "#stack" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "about", href: "#about" },
+  { label: "experience", href: "#experience" },
+  { label: "writing", href: "#writing" },
+  { label: "stack", href: "#stack" },
+  { label: "contact", href: "#contact" },
 ];
 
 export default function Nav() {
@@ -25,11 +26,10 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <a
-          href="#hero"
-          className="font-jakarta text-lg font-semibold text-cream tracking-tight"
-        >
-          Inês Silva
+        <a href="#hero" className="font-jakarta">
+          <span style={{ display: 'inline-flex', alignItems: 'baseline', color: '#F5EDD8', fontSize: '16px', fontWeight: 500, letterSpacing: '0.01em' }}>
+            <SparkleI />nês soares silva
+          </span>
         </a>
         <nav aria-label="Primary navigation" className="flex items-center gap-8">
           {navLinks.map(({ label, href }) => (
