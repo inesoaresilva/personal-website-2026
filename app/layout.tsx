@@ -15,8 +15,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Inês Silva — Portfolio",
-  description: "Software engineer based in Porto, Portugal.",
+  title: "inês soares silva — frontend engineer",
+  description: "I've spent 5+ years building things that work for real people — on slow connections, with screen readers, on edge cases nobody planned for.",
 };
 
 export default function RootLayout({
