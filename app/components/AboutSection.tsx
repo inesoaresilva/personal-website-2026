@@ -14,9 +14,11 @@ export default function AboutSection() {
       <div className="mx-auto max-w-6xl">
         <p
           aria-hidden="true"
-          className="px-6 pt-24 pb-16 md:px-16 font-fraunces text-[11px] uppercase tracking-[0.25em] text-navy/20"
+          className="px-6 pt-24 pb-16 md:px-16"
         >
-          About
+          <span className="inline-block rounded-full bg-navy/10 px-3 py-1 font-fraunces text-[12px] font-semibold uppercase tracking-[0.28em] text-navy/85">
+            About
+          </span>
         </p>
 
         <div className="flex flex-col gap-16 lg:flex-row lg:gap-0">
