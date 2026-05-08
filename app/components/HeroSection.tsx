@@ -36,7 +36,7 @@ export default function HeroSection() {
         ref={sectionRef}
         id="hero"
         aria-labelledby="hero-heading"
-        className="relative z-10 flex min-h-screen items-center overflow-hidden bg-navy px-6 md:px-16"
+        className="relative z-10 flex min-h-screen items-center overflow-hidden bg-navy px-6 pt-28 md:px-16 md:pt-32"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
@@ -46,10 +46,10 @@ export default function HeroSection() {
           {/* ── Left: text ── */}
           <div className="flex-1 text-center lg:text-left">
             <h1 id="hero-heading" tabIndex={-1} className="font-fraunces leading-none tracking-tight outline-none">
-              <span className="block text-7xl font-bold text-cream md:text-8xl xl:text-9xl">
+              <span className="block text-6xl font-bold text-cream sm:text-7xl md:text-8xl xl:text-9xl">
                 Curious
               </span>
-              <span className="block text-7xl font-light italic text-lemon md:text-8xl xl:text-9xl">
+              <span className="block text-6xl font-light italic text-lemon sm:text-7xl md:text-8xl xl:text-9xl">
                 by nature.
               </span>
             </h1>
@@ -116,7 +116,7 @@ export default function HeroSection() {
       <div
         aria-hidden
         className="pointer-events-none absolute left-0 top-full w-full z-10"
-        style={{ marginBottom: '-1px' }}
+        style={{ transform: "translateY(-1px)" }}
       >
         <svg
           viewBox="0 0 1440 80"
@@ -124,10 +124,12 @@ export default function HeroSection() {
           xmlns="http://www.w3.org/2000/svg"
           className="h-20 w-full"
           style={{ display: 'block' }}
+          shapeRendering="geometricPrecision"
         >
           <path
             d="M0,50 C120,20 240,20 360,50 C480,80 600,80 720,50 C840,20 960,20 1080,50 C1200,80 1320,80 1440,50 L1440,0 L0,0 Z"
             fill="#0d1b2a"
+            stroke="none"
           />
         </svg>
       </div>
