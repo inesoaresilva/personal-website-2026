@@ -14,6 +14,7 @@ const navLinks = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuLock, setMenuLock] = useState(false);
   const scrollYRef = useRef<number>(0);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Nav() {
 
   useEffect(() => {
     // iOS Safari can "jump" when toggling overflow; lock scroll by fixing body.
-    if (menuOpen) {
+    if (menuLock) {
       scrollYRef.current = window.scrollY;
       document.body.style.position = "fixed";
       document.body.style.top = `-${scrollYRef.current}px`;
@@ -47,7 +48,12 @@ export default function Nav() {
       document.body.style.right = "";
       document.body.style.width = "";
     };
-  }, [menuOpen]);
+  }, [menuLock]);
+
+  const open = () => {
+    setMenuLock(true);
+    setMenuOpen(true);
+  };
 
   const close = () => setMenuOpen(false);
 
@@ -82,7 +88,7 @@ export default function Nav() {
           {/* Hamburger — mobile only */}
           <button
             className="md:hidden flex flex-col justify-center gap-[6px] p-1"
-            onClick={() => setMenuOpen(true)}
+            onClick={open}
             aria-expanded={menuOpen}
             aria-label="Open navigation menu"
           >
@@ -94,7 +100,7 @@ export default function Nav() {
       </header>
 
       {/* Mobile overlay */}
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={() => setMenuLock(false)}>
         {menuOpen && (
           <motion.div
             role="dialog"
