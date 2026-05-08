@@ -16,6 +16,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuLock, setMenuLock] = useState(false);
   const scrollYRef = useRef<number>(0);
+  const pendingHashRef = useRef<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -56,6 +57,31 @@ export default function Nav() {
   };
 
   const close = () => setMenuOpen(false);
+
+  const onNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      pendingHashRef.current = href;
+    }
+    close();
+  };
+
+  const scrollToHash = (hash: string) => {
+    if (!hash.startsWith("#")) return;
+
+    const el = document.querySelector(hash);
+    if (!el) return;
+
+    // Keep URL in sync without relying on native anchor jump while locked.
+    window.history.pushState(null, "", hash);
+
+    // Wait a tick so body unlock + layout settle before scrolling.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  };
 
   return (
     <>
@@ -100,7 +126,14 @@ export default function Nav() {
       </header>
 
       {/* Mobile overlay */}
-      <AnimatePresence onExitComplete={() => setMenuLock(false)}>
+      <AnimatePresence
+        onExitComplete={() => {
+          setMenuLock(false);
+          const hash = pendingHashRef.current;
+          pendingHashRef.current = null;
+          if (hash) scrollToHash(hash);
+        }}
+      >
         {menuOpen && (
           <motion.div
             role="dialog"
@@ -136,7 +169,7 @@ export default function Nav() {
                 <a
                   key={href}
                   href={href}
-                  onClick={close}
+                  onClick={(e) => onNavLinkClick(e, href)}
                   className="font-jakarta text-cream/80 hover:text-cream transition-colors"
                   style={{ fontSize: "2rem", textDecoration: "none" }}
                 >
