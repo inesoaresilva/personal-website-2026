@@ -36,7 +36,7 @@ export default function HeroSection() {
         ref={sectionRef}
         id="hero"
         aria-labelledby="hero-heading"
-        className="relative z-10 flex min-h-screen items-center overflow-hidden bg-navy px-6 md:px-16"
+        className="relative z-10 flex min-h-screen items-center overflow-hidden bg-navy px-6 pt-28 md:px-16 md:pt-32"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
@@ -46,10 +46,10 @@ export default function HeroSection() {
           {/* ── Left: text ── */}
           <div className="flex-1 text-center lg:text-left">
             <h1 id="hero-heading" tabIndex={-1} className="font-fraunces leading-none tracking-tight outline-none">
-              <span className="block text-7xl font-bold text-cream md:text-8xl xl:text-9xl">
+              <span className="block text-6xl font-bold text-cream sm:text-7xl md:text-8xl xl:text-9xl">
                 Curious
               </span>
-              <span className="block text-7xl font-light italic text-lemon md:text-8xl xl:text-9xl">
+              <span className="block text-6xl font-light italic text-lemon sm:text-7xl md:text-8xl xl:text-9xl">
                 by nature.
               </span>
             </h1>

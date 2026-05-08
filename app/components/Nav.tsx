@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SparkleI from "./SparkleI";
 
@@ -14,6 +14,7 @@ const navLinks = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrollYRef = useRef<number>(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -22,8 +23,30 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    // iOS Safari can "jump" when toggling overflow; lock scroll by fixing body.
+    if (menuOpen) {
+      scrollYRef.current = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollYRef.current}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollYRef.current);
+    }
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+    };
   }, [menuOpen]);
 
   const close = () => setMenuOpen(false);
@@ -77,9 +100,9 @@ export default function Nav() {
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ y: -20 }}
+            animate={{ y: 0 }}
+            exit={{ y: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
             style={{ backgroundColor: "#0D1B2A" }}
@@ -94,8 +117,15 @@ export default function Nav() {
               ×
             </button>
 
-            {/* Links */}
-            <nav aria-label="Mobile navigation" className="flex flex-col items-center gap-8">
+            {/* Links (fade only the content, keep backdrop solid) */}
+            <motion.nav
+              aria-label="Mobile navigation"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18, ease: "easeOut", delay: 0.03 }}
+              className="flex flex-col items-center gap-8"
+            >
               {navLinks.map(({ label, href }) => (
                 <a
                   key={href}
@@ -107,7 +137,7 @@ export default function Nav() {
                   {label}
                 </a>
               ))}
-            </nav>
+            </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>
