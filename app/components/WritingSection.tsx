@@ -68,7 +68,7 @@ export default function WritingSection() {
       <div
         aria-hidden
         className="pointer-events-none absolute left-0 top-full z-10 w-full"
-        style={{ marginBottom: '-1px' }}
+        style={{ transform: "translateY(-1px)" }}
       >
         <svg
           viewBox="0 0 1440 80"
@@ -76,8 +76,9 @@ export default function WritingSection() {
           xmlns="http://www.w3.org/2000/svg"
           className="h-20 w-full"
           style={{ display: 'block' }}
+          shapeRendering="geometricPrecision"
         >
-          <path d={WAVE_PATH} fill="#A8D8EA" />
+          <path d={WAVE_PATH} fill="#A8D8EA" stroke="none" />
         </svg>
       </div>
     </section>

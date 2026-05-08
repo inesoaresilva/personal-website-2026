@@ -81,7 +81,7 @@ export default function AboutSection() {
       <div
         aria-hidden
         className="pointer-events-none absolute left-0 top-full z-10 w-full"
-        style={{ marginBottom: '-1px' }}
+        style={{ transform: "translateY(-1px)" }}
       >
         <svg
           viewBox="0 0 1440 80"
@@ -89,10 +89,12 @@ export default function AboutSection() {
           xmlns="http://www.w3.org/2000/svg"
           className="h-20 w-full"
           style={{ display: 'block' }}
+          shapeRendering="geometricPrecision"
         >
           <path
             d="M0,50 C120,20 240,20 360,50 C480,80 600,80 720,50 C840,20 960,20 1080,50 C1200,80 1320,80 1440,50 L1440,0 L0,0 Z"
             fill="#F5EDD8"
+            stroke="none"
           />
         </svg>
       </div>
