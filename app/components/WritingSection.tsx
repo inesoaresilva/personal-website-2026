@@ -1,3 +1,5 @@
+import { FadeUp } from "./FadeUp";
+
 const articles = [
   {
     title: "From React to Ember: Building a Blog",
@@ -26,40 +28,43 @@ export default function WritingSection() {
       className="relative w-full bg-powder px-6 py-24 md:px-16"
     >
       <div className="mx-auto max-w-6xl">
-        <p className="mb-3 font-jakarta text-[11px] uppercase tracking-widest text-[rgba(13,27,42,0.5)]">
-          Writing
-        </p>
+        <FadeUp delay={0}>
+          <p className="mb-3 font-jakarta text-[11px] uppercase tracking-widest text-[rgba(13,27,42,0.5)]">
+            Writing
+          </p>
+        </FadeUp>
 
-        <h2
-          id="writing-heading"
-          className="mb-16 font-fraunces text-[42px] font-bold leading-tight text-[#0D1B2A]"
-        >
-          When I write
-          <br />
-          <span className="font-light italic">things down.</span>
-        </h2>
+        <FadeUp delay={0.1}>
+          <h2
+            id="writing-heading"
+            className="mb-16 font-fraunces text-[42px] font-bold leading-tight text-[#0D1B2A]"
+          >
+            When I write
+            <br />
+            <span className="font-light italic">things down.</span>
+          </h2>
+        </FadeUp>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {articles.map((article) => (
-            <div
-              key={article.title}
-              className="flex flex-col gap-4 rounded-2xl bg-[rgba(13,27,42,0.08)] p-6 transition-transform duration-200 ease-in-out hover:-translate-y-0.5"
-            >
-              <h3 className="font-jakarta text-[17px] font-bold leading-snug text-[#0D1B2A]">
-                {article.title}
-              </h3>
-              <p className="flex-1 font-jakarta text-[15px] leading-[1.7] text-[#0D1B2A]">
-                {article.description}
-              </p>
-              <a
-                href={article.linkUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-jakarta text-[14px] text-[#2A5C8A] no-underline hover:underline"
-              >
-                mainmatter.com/blog →
-              </a>
-            </div>
+          {articles.map((article, i) => (
+            <FadeUp key={article.title} delay={0.1 + i * 0.1}>
+              <div className="flex flex-col gap-4 rounded-2xl bg-[rgba(13,27,42,0.08)] p-6 transition-transform duration-200 ease-in-out hover:-translate-y-0.5">
+                <h3 className="font-jakarta text-[17px] font-bold leading-snug text-[#0D1B2A]">
+                  {article.title}
+                </h3>
+                <p className="flex-1 font-jakarta text-[15px] leading-[1.7] text-[#0D1B2A]">
+                  {article.description}
+                </p>
+                <a
+                  href={article.linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-jakarta text-[14px] text-[#2A5C8A] no-underline hover:underline"
+                >
+                  mainmatter.com/blog →
+                </a>
+              </div>
+            </FadeUp>
           ))}
         </div>
       </div>

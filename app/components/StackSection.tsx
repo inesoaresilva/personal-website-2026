@@ -1,3 +1,5 @@
+import { FadeUp } from "./FadeUp";
+
 const WAVE_PATH =
   "M0,50 C120,20 240,20 360,50 C480,80 600,80 720,50 C840,20 960,20 1080,50 C1200,80 1320,80 1440,50 L1440,0 L0,0 Z";
 
@@ -80,63 +82,71 @@ export default function StackSection() {
       style={{ backgroundColor: SECTION_BG }}
     >
       <div className="mx-auto max-w-6xl">
-        <p
-          className="mb-3 font-jakarta text-[11px] font-normal uppercase text-[rgba(245,237,216,0.55)]"
-          style={{ letterSpacing: "0.12em" }}
-        >
-          Stack
-        </p>
+        <FadeUp delay={0}>
+          <p
+            className="mb-3 font-jakarta text-[11px] font-normal uppercase text-[rgba(245,237,216,0.55)]"
+            style={{ letterSpacing: "0.12em" }}
+          >
+            Stack
+          </p>
+        </FadeUp>
 
-        <h2
-          id="stack-heading"
-          className="mb-16 font-fraunces text-[42px] font-bold leading-tight text-[#F5EDD8]"
-        >
-          What I
-          <br />
-          <span className="font-light italic">work with.</span>
-        </h2>
+        <FadeUp delay={0.1}>
+          <h2
+            id="stack-heading"
+            className="mb-16 font-fraunces text-[42px] font-bold leading-tight text-[#F5EDD8]"
+          >
+            What I
+            <br />
+            <span className="font-light italic">work with.</span>
+          </h2>
+        </FadeUp>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-          {categories.map((cat) => (
-            <div key={cat.label}>
-              <p className={CAT_LABEL}>{cat.label}</p>
-              <ul className="flex flex-wrap gap-2">
-                {cat.groups.map((group) =>
-                  group.pills.map((pill) => (
-                    <li
-                      key={pill}
-                      className="rounded-[20px] px-[14px] py-[6px] font-jakarta text-[13px] font-normal"
-                      style={{ backgroundColor: group.bg, color: group.color }}
-                    >
-                      {pill}
-                    </li>
-                  ))
-                )}
-              </ul>
-            </div>
+          {categories.map((cat, i) => (
+            <FadeUp key={cat.label} delay={0.1 + i * 0.05}>
+              <div>
+                <p className={CAT_LABEL}>{cat.label}</p>
+                <ul className="flex flex-wrap gap-2">
+                  {cat.groups.map((group) =>
+                    group.pills.map((pill) => (
+                      <li
+                        key={pill}
+                        className="rounded-[20px] px-[14px] py-[6px] font-jakarta text-[13px] font-normal"
+                        style={{ backgroundColor: group.bg, color: group.color }}
+                      >
+                        {pill}
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </div>
+            </FadeUp>
           ))}
 
           {/* Spoken Languages */}
-          <div>
-            <p className={CAT_LABEL}>Spoken Languages</p>
-            <ul className="flex flex-wrap gap-2">
-              {spokenLanguages.map(({ code, level }) => (
-                <li
-                  key={code}
-                  className="inline-flex items-baseline gap-1.5 rounded-[20px] px-[14px] py-[6px] font-jakarta text-[13px] font-normal"
-                  style={{ backgroundColor: "#F5EDD8", color: "#2A3D2E" }}
-                >
-                  {code}
-                  <span
-                    className="text-[11px]"
-                    style={{ color: "#2A3D2E", opacity: 0.55 }}
+          <FadeUp delay={0.3}>
+            <div>
+              <p className={CAT_LABEL}>Spoken Languages</p>
+              <ul className="flex flex-wrap gap-2">
+                {spokenLanguages.map(({ code, level }) => (
+                  <li
+                    key={code}
+                    className="inline-flex items-baseline gap-1.5 rounded-[20px] px-[14px] py-[6px] font-jakarta text-[13px] font-normal"
+                    style={{ backgroundColor: "#F5EDD8", color: "#2A3D2E" }}
                   >
-                    {level}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    {code}
+                    <span
+                      className="text-[11px]"
+                      style={{ color: "#2A3D2E", opacity: 0.55 }}
+                    >
+                      {level}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeUp>
         </div>
       </div>
 

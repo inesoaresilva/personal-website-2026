@@ -1,3 +1,5 @@
+import { FadeUp } from "./FadeUp";
+
 const TAG_STYLE =
   "rounded-full border border-[#A8D8EA]/30 px-3 py-1 font-jakarta text-xs text-[#A8D8EA]";
 
@@ -80,95 +82,100 @@ export default function WorkSection() {
       className="relative w-full bg-navy px-6 py-24 md:px-16"
     >
       <div className="mx-auto max-w-6xl">
-        <p className="mb-3 font-jakarta text-[11px] uppercase tracking-widest text-[#F5EDD8]/50">
-          Work
-        </p>
+        <FadeUp delay={0}>
+          <p className="mb-3 font-jakarta text-[11px] uppercase tracking-widest text-[#F5EDD8]/50">
+            Work
+          </p>
+        </FadeUp>
 
-        <h2
-          id="work-heading"
-          className="mb-16 font-fraunces text-[42px] font-bold leading-tight text-[#F5EDD8]"
-        >
-          Places I&apos;ve{" "}
-          <span className="font-light italic text-[#FBE290]">worked at</span>.
-        </h2>
+        <FadeUp delay={0.1}>
+          <h2
+            id="work-heading"
+            className="mb-16 font-fraunces text-[42px] font-bold leading-tight text-[#F5EDD8]"
+          >
+            Places I&apos;ve{" "}
+            <span className="font-light italic text-[#FBE290]">worked at</span>.
+          </h2>
+        </FadeUp>
 
         <div className="flex flex-col gap-16">
-          {jobs.map((job) => (
-            <article
-              key={job.company}
-              aria-label={`${job.role} at ${job.company}`}
-              className="flex flex-col gap-6 sm:flex-row sm:gap-12"
-            >
-              {/* Left column: date, company, role, sublabel */}
-              <div className="w-36 shrink-0 flex flex-col gap-1">
-                <p className="font-jakarta text-sm font-medium text-[#FBE290]">
-                  {job.dates}
-                </p>
-                <a
-                  href={job.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-baseline gap-0.5 font-jakarta text-[15px] font-semibold leading-snug text-[#F5EDD8] no-underline transition-colors duration-200 ease-in-out hover:text-[#FBE290]"
-                >
-                  {job.company} ↗
-                </a>
-                <p className="font-jakarta text-xs text-[rgba(245,237,216,0.5)]">
-                  {job.role}
-                </p>
-                {job.sublabel && (
-                  <p className="font-jakarta text-[12px] text-[rgba(245,237,216,0.45)]">
-                    {job.sublabel}
+          {jobs.map((job, i) => (
+            <FadeUp key={job.company} delay={0.1 + i * 0.1}>
+              <article
+                aria-label={`${job.role} at ${job.company}`}
+                className="flex flex-col gap-6 sm:flex-row sm:gap-12"
+              >
+                {/* Left column: date, company, role, sublabel */}
+                <div className="w-36 shrink-0 flex flex-col gap-1">
+                  <p className="font-jakarta text-sm font-medium text-[#FBE290]">
+                    {job.dates}
                   </p>
-                )}
-              </div>
-
-              {/* Right content */}
-              <div className="flex flex-col gap-4">
-                <p className="max-w-2xl font-jakarta text-[15px] leading-[1.75] text-[rgba(245,237,216,0.85)]">
-                  {job.description}
-                </p>
-
-                {job.tags && (
-                  <ul
-                    className="flex flex-wrap gap-2"
-                    aria-label="Technologies used"
+                  <a
+                    href={job.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-baseline gap-0.5 font-jakarta text-[15px] font-semibold leading-snug text-[#F5EDD8] no-underline transition-colors duration-200 ease-in-out hover:text-[#FBE290]"
                   >
-                    {job.tags.map((tag) => (
-                      <li key={tag} className={TAG_STYLE}>
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                    {job.company} ↗
+                  </a>
+                  <p className="font-jakarta text-xs text-[rgba(245,237,216,0.5)]">
+                    {job.role}
+                  </p>
+                  {job.sublabel && (
+                    <p className="font-jakarta text-[12px] text-[rgba(245,237,216,0.45)]">
+                      {job.sublabel}
+                    </p>
+                  )}
+                </div>
 
-                {job.projects && (
-                  <div className="space-y-5 border-l-2 border-[#A8D8EA]/15 pl-5">
-                    {job.projects.map((project) => (
-                      <div key={project.name}>
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-jakarta text-[14px] font-semibold text-[#A8D8EA] no-underline hover:underline"
-                        >
-                          {project.name} ↗
-                        </a>
-                        <p className="mt-1 font-jakarta text-[14px] leading-[1.65] text-[rgba(245,237,216,0.85)]">
-                          {project.description}
-                        </p>
-                        <ul className="mt-2 flex flex-wrap gap-2">
-                          {project.tags.map((tag) => (
-                            <li key={tag} className={TAG_STYLE}>
-                              {tag}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </article>
+                {/* Right content */}
+                <div className="flex flex-col gap-4">
+                  <p className="max-w-2xl font-jakarta text-[15px] leading-[1.75] text-[rgba(245,237,216,0.85)]">
+                    {job.description}
+                  </p>
+
+                  {job.tags && (
+                    <ul
+                      className="flex flex-wrap gap-2"
+                      aria-label="Technologies used"
+                    >
+                      {job.tags.map((tag) => (
+                        <li key={tag} className={TAG_STYLE}>
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {job.projects && (
+                    <div className="space-y-5 border-l-2 border-[#A8D8EA]/15 pl-5">
+                      {job.projects.map((project) => (
+                        <div key={project.name}>
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-jakarta text-[14px] font-semibold text-[#A8D8EA] no-underline hover:underline"
+                          >
+                            {project.name} ↗
+                          </a>
+                          <p className="mt-1 font-jakarta text-[14px] leading-[1.65] text-[rgba(245,237,216,0.85)]">
+                            {project.description}
+                          </p>
+                          <ul className="mt-2 flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                              <li key={tag} className={TAG_STYLE}>
+                                {tag}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </article>
+            </FadeUp>
           ))}
         </div>
       </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef, useCallback } from "react";
 import Sparkles from "./Sparkles";
+import { FadeUp } from "./FadeUp";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,46 +46,52 @@ export default function HeroSection() {
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
           {/* ── Left: text ── */}
           <div className="flex-1 text-center lg:text-left">
-            <h1 id="hero-heading" tabIndex={-1} className="font-fraunces leading-none tracking-tight outline-none">
-              <span className="block text-6xl font-bold text-cream sm:text-7xl md:text-8xl xl:text-9xl">
-                Curious
-              </span>
-              <span className="block text-6xl font-light italic text-lemon sm:text-7xl md:text-8xl xl:text-9xl">
-                by nature.
-              </span>
-            </h1>
+            <FadeUp delay={0}>
+              <h1 id="hero-heading" tabIndex={-1} className="font-fraunces leading-none tracking-tight outline-none">
+                <span className="block text-6xl font-bold text-cream sm:text-7xl md:text-8xl xl:text-9xl">
+                  Curious
+                </span>
+                <span className="block text-6xl font-light italic text-lemon sm:text-7xl md:text-8xl xl:text-9xl">
+                  by nature.
+                </span>
+              </h1>
+            </FadeUp>
 
-            <p
-              className="font-fraunces mt-8 max-w-lg mx-auto lg:mx-0"
-              style={{
-                fontStyle: "italic",
-                fontWeight: 300,
-                fontSize: "17px",
-                lineHeight: 1.7,
-                color: "#F5EDD8",
-              }}
-            >
-              <span style={{ color: "#A8D8EA", fontWeight: 500, fontSize: "20px" }}>Frontend engineer</span>
-              <br />
-              I&rsquo;ve spent 5+ years building things that work for real people — on slow connections, with screen readers, on edge cases nobody planned for.
-              <br /><br />
-              I explore new tools fast — including AI — and I have the depth to know when the output is wrong.
-            </p>
+            <FadeUp delay={0.15}>
+              <p
+                className="font-fraunces mt-8 max-w-lg mx-auto lg:mx-0"
+                style={{
+                  fontStyle: "italic",
+                  fontWeight: 300,
+                  fontSize: "17px",
+                  lineHeight: 1.7,
+                  color: "#F5EDD8",
+                }}
+              >
+                <span style={{ color: "#A8D8EA", fontWeight: 500, fontSize: "20px" }}>Frontend engineer</span>
+                <br />
+                I&rsquo;ve spent 5+ years building things that work for real people — on slow connections, with screen readers, on edge cases nobody planned for.
+                <br /><br />
+                I explore new tools fast — including AI — and I have the depth to know when the output is wrong.
+              </p>
+            </FadeUp>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
-              <a
-                href="#contact"
-                className="font-jakarta rounded-full bg-lemon px-7 py-3 text-sm font-semibold text-navy transition-opacity hover:opacity-80"
-              >
-                get in touch
-              </a>
-              <a
-                href="#experience"
-                className="font-jakarta rounded-full border border-powder px-7 py-3 text-sm text-powder transition-colors hover:bg-powder/10"
-              >
-                my experience
-              </a>
-            </div>
+            <FadeUp delay={0.25}>
+              <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
+                <a
+                  href="#contact"
+                  className="font-jakarta rounded-full bg-lemon px-7 py-3 text-sm font-semibold text-navy transition-opacity hover:opacity-80"
+                >
+                  get in touch
+                </a>
+                <a
+                  href="#experience"
+                  className="font-jakarta rounded-full border border-powder px-7 py-3 text-sm text-powder transition-colors hover:bg-powder/10"
+                >
+                  my experience
+                </a>
+              </div>
+            </FadeUp>
           </div>
 
           {/* ── Right: Memoji ── */}
