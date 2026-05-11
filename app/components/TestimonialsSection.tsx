@@ -31,15 +31,6 @@ export default function TestimonialsSection() {
 
       <div className="mx-auto max-w-6xl">
         <FadeUp delay={0}>
-          <p
-            className="mb-3 font-jakarta text-[11px] font-normal uppercase"
-            style={{ color: "#5C7A6B", letterSpacing: "0.12em" }}
-          >
-            Testimonials
-          </p>
-        </FadeUp>
-
-        <FadeUp delay={0.1}>
           <h2
             id="testimonials-heading"
             className="mb-16 font-fraunces text-[42px] leading-tight"
