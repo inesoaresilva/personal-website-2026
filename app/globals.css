@@ -31,6 +31,16 @@ body {
   border-radius: 2px;
 }
 
+/* Reset Framer Motion inline animation styles for print */
+@media print {
+  * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
