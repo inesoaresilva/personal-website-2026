@@ -93,7 +93,7 @@ export default function Nav() {
       >
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
           {/* Logo */}
-          <a href="#hero" className="font-jakarta">
+          <a href="#hero" className="font-jakarta shrink-0 whitespace-nowrap">
             <span style={{ color: "#F5EDD8", fontSize: "16px", fontWeight: 500, letterSpacing: "0.01em" }}>
               <SparkleI />nês<span className="hidden md:inline"> soares</span> silva
             </span>
