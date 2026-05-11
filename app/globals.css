@@ -32,31 +32,27 @@ body {
 }
 
 @media print {
-  /* Stop animations — belt-and-suspenders alongside the JS beforeprint handler */
+  /* Stop animations — belt-and-suspenders alongside FadeUp's beforeprint handler */
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
   }
 
-  /* White background everywhere — overrides navy/sage/cream section colours */
-  body, section {
-    background-color: white !important;
-    background-image: none !important;
+  /* Force section backgrounds to print — the design's text colours already match
+     each section's background (cream → dark text, navy/sage → light text) */
+  section, section * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 
-  /* All text → readable dark, overriding every inline color style */
-  * {
-    color: #111 !important;
-  }
-
-  /* Remove viewport-height constraints so hero doesn't eat an entire page */
+  /* Remove viewport-height constraints so the hero doesn't waste a full page */
   section {
     min-height: auto !important;
     height: auto !important;
     overflow: visible !important;
   }
 
-  /* Hide fixed nav, skip link, and all decorative elements (waves, memoji) */
+  /* Hide fixed nav, skip link, and purely decorative elements (waves, memoji) */
   header, a[href="#hero-heading"], [aria-hidden="true"] {
     display: none !important;
   }
