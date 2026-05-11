@@ -31,13 +31,44 @@ body {
   border-radius: 2px;
 }
 
-/* Reset Framer Motion inline animation styles for print */
 @media print {
-  * {
-    opacity: 1 !important;
-    transform: none !important;
+  /* Kill all animations so Framer Motion WAAPI states don't freeze at opacity:0 */
+  *, *::before, *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  /* Force all text to readable dark — overrides cream/yellow inline color styles */
+  body, h1, h2, h3, h4, h5, h6, p, span, a, li, blockquote, footer {
+    color: #111 !important;
+    background: transparent !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  /* Strip full-viewport height so hero doesn't waste an entire page */
+  section {
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide the fixed nav and skip link */
+  header, a[href="#hero-heading"] {
+    display: none !important;
+  }
+
+  /* Hide purely decorative elements (waves, memoji, sparkles) */
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* Keep images visible */
+  img {
+    display: block !important;
+    opacity: 1 !important;
   }
 }
 
