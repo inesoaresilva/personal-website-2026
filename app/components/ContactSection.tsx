@@ -68,6 +68,7 @@ export default function ContactSection() {
               href="https://www.linkedin.com/in/inesoaresilva/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn profile (opens in new tab)"
               className="font-jakarta rounded-full border border-[#A8D8EA] px-6 py-3 text-sm font-semibold text-[#A8D8EA] transition-opacity hover:opacity-80"
             >
               LinkedIn
@@ -76,6 +77,7 @@ export default function ContactSection() {
               href="https://github.com/inesoaresilva"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub profile (opens in new tab)"
               className="font-jakarta rounded-full border border-[#A8D8EA] px-6 py-3 text-sm font-semibold text-[#A8D8EA] transition-opacity hover:opacity-80"
             >
               GitHub

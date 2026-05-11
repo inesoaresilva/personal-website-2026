@@ -18,6 +18,8 @@ export default function Nav() {
   const [menuLock, setMenuLock] = useState(false);
   const scrollYRef = useRef<number>(0);
   const pendingHashRef = useRef<string | null>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -52,6 +54,13 @@ export default function Nav() {
     };
   }, [menuLock]);
 
+  // Move focus into the menu when it opens
+  useEffect(() => {
+    if (menuOpen) {
+      requestAnimationFrame(() => closeButtonRef.current?.focus());
+    }
+  }, [menuOpen]);
+
   const open = () => {
     setMenuLock(true);
     setMenuOpen(true);
@@ -73,15 +82,36 @@ export default function Nav() {
     const el = document.querySelector(hash);
     if (!el) return;
 
-    // Keep URL in sync without relying on native anchor jump while locked.
     window.history.pushState(null, "", hash);
 
-    // Wait a tick so body unlock + layout settle before scrolling.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
+  };
+
+  // Trap focus within the open menu and handle Escape
+  const handleMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Escape") {
+      close();
+      return;
+    }
+    if (e.key !== "Tab") return;
+
+    const focusable = Array.from(
+      e.currentTarget.querySelectorAll<HTMLElement>("button, a[href]")
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   };
 
   return (
@@ -114,6 +144,7 @@ export default function Nav() {
 
           {/* Hamburger — mobile only */}
           <button
+            ref={hamburgerRef}
             className="md:hidden flex flex-col justify-center gap-[6px] p-1"
             onClick={open}
             aria-expanded={menuOpen}
@@ -132,7 +163,12 @@ export default function Nav() {
           setMenuLock(false);
           const hash = pendingHashRef.current;
           pendingHashRef.current = null;
-          if (hash) scrollToHash(hash);
+          if (hash) {
+            scrollToHash(hash);
+          } else {
+            // Return focus to the trigger when closing without navigation
+            hamburgerRef.current?.focus();
+          }
         }}
       >
         {menuOpen && (
@@ -140,6 +176,7 @@ export default function Nav() {
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
+            onKeyDown={handleMenuKeyDown}
             initial={{ y: -20 }}
             animate={{ y: 0 }}
             exit={{ y: -20 }}
@@ -149,6 +186,7 @@ export default function Nav() {
           >
             {/* Close button — mirrors hamburger position */}
             <button
+              ref={closeButtonRef}
               onClick={close}
               aria-label="Close navigation menu"
               className="absolute top-5 right-6 font-jakarta text-cream/80 hover:text-cream transition-colors"

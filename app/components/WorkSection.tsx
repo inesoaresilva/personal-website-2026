@@ -114,6 +114,7 @@ export default function WorkSection() {
                     href={job.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${job.company} (opens in new tab)`}
                     className="inline-flex items-baseline gap-0.5 font-jakarta text-[15px] font-semibold leading-snug text-[#F5EDD8] no-underline transition-colors duration-200 ease-in-out hover:text-[#FBE290]"
                   >
                     {job.company} ↗
@@ -155,6 +156,7 @@ export default function WorkSection() {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`${project.name} case study (opens in new tab)`}
                             className="font-jakarta text-[14px] font-semibold text-[#A8D8EA] no-underline hover:underline"
                           >
                             {project.name} ↗

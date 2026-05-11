@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
                 </p>
                 <p
                   className="font-jakarta text-[13px]"
-                  style={{ color: "rgba(13,27,42,0.55)" }}
+                  style={{ color: "rgba(13,27,42,0.7)" }}
                 >
                   Head of Engineering · Sky
                 </p>
@@ -111,7 +111,7 @@ export default function TestimonialsSection() {
                 </p>
                 <p
                   className="font-jakarta text-[13px]"
-                  style={{ color: "rgba(13,27,42,0.55)" }}
+                  style={{ color: "rgba(13,27,42,0.7)" }}
                 >
                   Software Engineer · Mainmatter
                 </p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const SPARKLES: {
   id: number;
@@ -26,6 +26,9 @@ const SPARKLES: {
 ];
 
 export default function Sparkles() {
+  const reduced = useReducedMotion();
+  if (reduced) return null;
+
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0">
       {SPARKLES.map((s) => (

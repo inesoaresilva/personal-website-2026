@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function FadeUp({
   children,
@@ -8,6 +8,10 @@ export function FadeUp({
   children: React.ReactNode;
   delay?: number;
 }) {
+  const reduced = useReducedMotion();
+
+  if (reduced) return <>{children}</>;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}

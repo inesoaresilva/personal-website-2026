@@ -59,6 +59,7 @@ export default function WritingSection() {
                   href={article.linkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Read "${article.title}" on mainmatter.com (opens in new tab)`}
                   className="font-jakarta text-[14px] text-[#2A5C8A] no-underline hover:underline"
                 >
                   mainmatter.com/blog →
