@@ -11,7 +11,7 @@ const articles = [
   {
     title: "Journey of a Junior Software Engineer",
     description:
-      "Until recently, I wondered: 'My code is done, why am I wasting my time with this?' — and then the moment came when I thanked myself for having tests.",
+      "Until recently, I wondered: 'My code is done, why am I wasting my time with this?' and then the moment came when I thanked myself for having tests.",
     linkUrl:
       "https://mainmatter.com/blog/2022/05/19/journey-of-a-junior-software-engineer/",
   },

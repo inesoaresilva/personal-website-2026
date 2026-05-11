@@ -70,9 +70,9 @@ export default function HeroSection() {
               >
                 <span style={{ color: "#A8D8EA", fontWeight: 500, fontSize: "20px" }}>Frontend engineer</span>
                 <br />
-                I&rsquo;ve spent 5+ years building things that work for real people — on slow connections, with screen readers, on edge cases nobody planned for.
+                I've spent 5+ years building frontend that works beyond the happy path. I communicate first, code second - I ask the questions that catch problems early and make teams easier to work with.
                 <br /><br />
-                I explore new tools fast — including AI — and I have the depth to know when the output is wrong.
+                I explore new tools fast, including AI, and I have the depth to know when the output is wrong.
               </p>
             </FadeUp>
 

@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
                 >
                   concrete improvements
                 </span>{" "}
-                — exactly the kind of{" "}
+                - exactly the kind of{" "}
                 <span
                   className="not-italic font-bold"
                   style={{ color: "#2A5C8A" }}
@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
               </p>
               <footer className="mt-5">
                 <p className="font-jakarta text-[14px] font-semibold text-[#0D1B2A]">
-                  — Christopher Zotter
+                  - Christopher Zotter
                 </p>
                 <p
                   className="font-jakarta text-[13px]"
@@ -107,7 +107,7 @@ export default function TestimonialsSection() {
               </p>
               <footer className="mt-5">
                 <p className="font-jakarta text-[14px] font-semibold text-[#0D1B2A]">
-                  — Óscar Domínguez Celada
+                  - Óscar Domínguez Celada
                 </p>
                 <p
                   className="font-jakarta text-[13px]"

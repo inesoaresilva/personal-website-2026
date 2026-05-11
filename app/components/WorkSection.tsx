@@ -11,7 +11,7 @@ const jobs = [
     role: "Frontend Engineer",
     sublabel: null,
     description:
-      "Sky is one of the largest TV and streaming providers. I worked on the customer-facing web platform for Sky Germany and Austria - device swap, account management, checkout — the flows subscribers use when something needs to change on their account. The depth was in accessibility: async focus management, aria-live regions, keyboard navigation through multi-step flows, edge cases that only appear on slow connections. I tested everything with VoiceOver. Testing stack: Jest, React Testing Library, MSW, and Storybook patterns. Redux Toolkit and RTK Query at scale.",
+      "Sky is one of the largest TV and streaming providers. I worked on the customer-facing web platform for Sky Germany and Austria - device swap, account management, checkout - the flows subscribers use when something needs to change on their account. The depth was in accessibility: async focus management, aria-live regions, keyboard navigation through multi-step flows, edge cases that only appear on slow connections. I tested everything with VoiceOver. Testing stack: Jest, React Testing Library, MSW, and Storybook patterns. Redux Toolkit and RTK Query at scale.",
     tags: [
       "Next.js",
       "React",
@@ -35,28 +35,28 @@ const jobs = [
     role: "Frontend Engineer",
     sublabel: null,
     description:
-      "Four years working across three very different products — different industries, different stacks, different scales.",
+      "Four years working across three very different products - different industries, different stacks, different scales.",
     tags: null,
     projects: [
       {
         name: "Rail Europe",
         url: "https://mainmatter.com/cases/rail-europe/",
         description:
-          "One of the world's largest train booking platforms. I worked on the Svelte and SvelteKit frontend building across the booking funnel — passenger details screens, shopping cart, form components, backend API integration. Progressive enhancement was a constant consideration: the product needed to work on poor connections, so features were built to function without JavaScript first. I also led a proof of concept for Storyblok CMS integration. Large codebase, distributed team, full agile cycle from refinement to production.",
+          "One of the world's largest train booking platforms. I worked on the Svelte and SvelteKit frontend building across the booking funnel - passenger details screens, shopping cart, form components, backend API integration. Progressive enhancement was a constant consideration: the product needed to work on poor connections, so features were built to function without JavaScript first. I also led a proof of concept for Storyblok CMS integration. Large codebase, distributed team, full agile cycle from refinement to production.",
         tags: ["Svelte", "SvelteKit",  "Storyblok"],
       },
       {
         name: "Gravity",
         url: "https://mainmatter.com/cases/gravity/",
         description:
-          "Internal developer tool: a GitHub app that monitors frontend bundle size in pull requests. I worked across the full stack — frontend UI, GitHub CheckRun integrations, bundle size tracking in CI, and infrastructure additions including Sentry for error tracking and Percy for visual regression testing. I collaborated closely with the designer on UI decisions, particularly on the First Build experience. For a long stretch it was just me and one other engineer without much structure around us — I pushed for retrospectives and regular process check-ins to keep us aligned.",
+          "Internal developer tool: a GitHub app that monitors frontend bundle size in pull requests. I worked across the full stack - frontend UI, GitHub CheckRun integrations, bundle size tracking in CI, and infrastructure additions including Sentry for error tracking and Percy for visual regression testing. I collaborated closely with the designer on UI decisions, particularly on the First Build experience. For a long stretch it was just me and one other engineer without much structure around us - I pushed for retrospectives and regular process check-ins to keep us aligned.",
         tags: ["Remix", "Node.js"],
       },
       {
         name: "Experteer",
         url: "https://mainmatter.com/cases/experteer/",
         description:
-          "Signup flow for a recruitment marketplace with 6 million users. I worked on the CV parsing product — a React app that extracts data from uploaded CVs to build user profiles. I built components across the app, handled form validation, and worked on a location autocomplete with geocode integration. Tests written in Jest and React Testing Library throughout.",
+          "Signup flow for a recruitment marketplace with 6 million users. I worked on the CV parsing product - a React app that extracts data from uploaded CVs to build user profiles. I built components across the app, handled form validation, and worked on a location autocomplete with geocode integration. Tests written in Jest and React Testing Library throughout.",
         tags: ["React", "TypeScript"],
       },
     ],
@@ -68,7 +68,7 @@ const jobs = [
     role: "Backend Engineer",
     sublabel: null,
     description:
-      "A fitness platform owned by Adidas. I worked on the social features team, building a backend feature to receive and store follow suggestions — consuming messages from a queue, implementing the use case, and building the MongoDB repository. I also updated service dependencies to fix a security vulnerability and wrote RSpec tests throughout.",
+      "A fitness platform owned by Adidas. I worked on the social features team, building a backend feature to receive and store follow suggestions - consuming messages from a queue, implementing the use case, and building the MongoDB repository. I also updated service dependencies to fix a security vulnerability and wrote RSpec tests throughout.",
     tags: ["Ruby on Rails", "RSpec", "RabbitMQ", "MongoDB"],
     projects: null,
   },

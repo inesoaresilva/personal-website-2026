@@ -56,22 +56,22 @@ export default function AboutSection() {
                 </p>
                 <p>
                   I have a bachelor&apos;s in Computer Engineering and a master&apos;s in
-                  Biomedical Engineering — my dissertation was on software applied to
+                  Biomedical Engineering - my dissertation was on software applied to
                   health systems. I chose that path because I wanted to understand how
                   systems connect to people, not just how they run.
                 </p>
                 <p>
                   That instinct shows up in how I work. Wherever I&apos;ve joined a team,
                   I&apos;ve started by getting to know the people in it. Then I look for the
-                  gaps nobody owns yet — unclear onboarding, missing documentation, the
-                  questions that keep coming up in Slack — and do something about them.
+                  gaps nobody owns yet - unclear onboarding, missing documentation, the
+                  questions that keep coming up in Slack, and do something about them.
                 </p>
                 <p className="mt-2 border-l-2 border-[#5C7A6B] pl-4 italic">
                   Nobody asks. It just needs doing.
                 </p>
                 <p>
                   I&apos;ve spent the last five years building interfaces at remote-first
-                  companies — React, Next.js, Svelte, TypeScript.
+                  companies - React, Next.js, Svelte, TypeScript.
                 </p>
                 <p>I use AI to move fast. The interesting work is still in the details it misses.</p>
               </div>
