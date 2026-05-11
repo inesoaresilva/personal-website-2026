@@ -1,4 +1,5 @@
 import { FadeUp } from "./FadeUp";
+import Sparkles from "./Sparkles";
 
 const WAVE_PATH =
   "M0,50 C120,20 240,20 360,50 C480,80 600,80 720,50 C840,20 960,20 1080,50 C1200,80 1320,80 1440,50 L1440,0 L0,0 Z";
@@ -8,8 +9,10 @@ export default function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative w-full bg-navy px-6 py-24 md:px-16"
+      className="relative w-full overflow-hidden bg-navy px-6 py-24 md:px-16"
     >
+      <Sparkles />
+
       {/* Top wave — cream dips into contact section */}
       <div
         aria-hidden
